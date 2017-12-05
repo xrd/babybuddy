@@ -19,3 +19,4 @@ docker.env
 /babybuddy/static
 /static
 /media
+*~

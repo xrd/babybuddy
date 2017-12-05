@@ -8,6 +8,21 @@ services:
     build: .
     command: gunicorn -c /app/gunicorn.py babybuddy.wsgi
     ports:
-      - "8000:8000"
+      - "80:8000"
     depends_on:
       - db
+  api:
+    build: ruby
+    depends_on:
+      - db
+    ports:
+      - "9090:9090"
+  nginx:
+    build: ./nginx
+    links:
+      - api
+    ports:
+      - "8443:8443"
+    environment:
+      - NGINX_HOST=babyjourn.al
+      - NGINX_PORT=8443
