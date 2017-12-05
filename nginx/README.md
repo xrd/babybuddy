@@ -7,7 +7,12 @@ Then, as root, copy those files into the nginx directory.
 
 If your hostname is babyfoo.com, then adjust the paths in the following files:
 
-Then, edit the Dockerfile to copy them into the correct location based on the hostname.
+Edit the Dockerfile to copy them into the correct location based on the hostname.
+
+```
+COPY privkey.pem /etc/letsencrypt/live/babyfoo.com/privkey.pem
+COPY fullchain.pem /etc/letsencrypt/live/babyfoo.com/fullchain.pem
+```
 
 Also, edit the following lines in nginx/default.conf:
 
