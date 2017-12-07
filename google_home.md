@@ -2,7 +2,7 @@ To support Google Home:
 
 * Setup project on DialogFlow.
  * Enable Google Assistant.
- * Set webhook to your endpoint (https://
+ * Set webhook to your endpoint (https://babyjourn.al/incoming)
  * Endpoint must be SSL, follow instructions inside nginx directory
 * Create intents
 * You can test by entering in the text and then reviewing the JSON.
